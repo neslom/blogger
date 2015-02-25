@@ -2,7 +2,6 @@
 
 <ul>
 <% @tags.each do |tag| %>
-  <li><%= tag.name %>
-    <%= link_to "delete", tag, method: :delete, data: { confirm: "Shit's gonna be gone..."} %></li>
+  <li><%= tag.name %><%= link_to "delete", tag, method: :delete, data: { confirm: "Shit's gonna be gone..."} %></li><br />
   <% end %>
 </ul>
