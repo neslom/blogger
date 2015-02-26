@@ -1,5 +1,18 @@
 <h1><%= @article.title %></h1>
 
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
+<p>
+<% if @article.image.exists? %>
+  <%= image_tag @article.image.url(:medium) %></p>
+<% end %>
+</p>
+
 <p><%= @article.body %></p>
 
 <h3>Comments (<%= @article.comments.count %>)</h3>
